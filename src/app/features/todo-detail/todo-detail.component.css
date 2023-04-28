@@ -1,0 +1,19 @@
+div {
+  padding: 20px;
+  background-color: #3b4252;
+
+  min-width: 250px;
+  max-width: 500px;
+  width: 100vw;
+  color: white;
+  border-radius: 7px;
+
+  margin: 30px auto;
+}
+
+.add-todo-form {
+  display: none;
+}
+.add-todo {
+  display: block !important;
+}
