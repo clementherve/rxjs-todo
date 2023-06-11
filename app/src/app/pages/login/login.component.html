@@ -1,0 +1,14 @@
+<form [formGroup]="loginFormGroup" (submit)="onLoginFormSubmit()">
+  <input type="text" formControlName="username" placeholder="Your username" />
+  <input
+    type="password"
+    formControlName="password"
+    placeholder="Your password"
+  />
+  <input type="submit" value="Log me in" [disabled]="!loginFormGroup.valid" />
+
+  <div *ngIf="login$ | async as login">
+    {{ login }}
+    <!-- fixme -->
+  </div>
+</form>

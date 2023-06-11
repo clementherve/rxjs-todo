@@ -1,0 +1,24 @@
+<ul>
+  <li *ngFor="let todo of todos$ | async" [class.completed]="todo.done">
+    <input
+      type="checkbox"
+      (change)="onCheckboxChanged($event, todo)"
+      [checked]="todo.done"
+    />
+    <a href="/todos/{{ todo.id }}">
+      {{ todo.title }}
+    </a>
+  </li>
+</ul>
+
+<button class="add" (click)="toggleAddTodo()">+</button>
+
+<form [class.add-todo]="isAddTodoShown" class="add-todo-form">
+  <input
+    type="text"
+    placeholder="Que voulez vous faire ?"
+    (keydown.enter)="addTodo$($event)"
+    name="todoText"
+  />
+</form>
+<div *ngIf="isAddTodoShown" class="backdrop" (click)="toggleAddTodo()"></div>

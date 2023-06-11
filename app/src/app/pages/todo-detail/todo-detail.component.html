@@ -1,0 +1,4 @@
+<div *ngIf="todo$ | async as todo">
+  <h2>{{ todo.title }}</h2>
+  <button (click)="deleteTodo(todo)">Supprimer</button>
+</div>
